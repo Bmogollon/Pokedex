@@ -29,7 +29,6 @@ h1{
   background-size: 55%  86%;
   background-repeat: no-repeat;
   grid-gap: 2%;
-  /* grid-template: 500px / 29% 21%; */
   grid-template: 500px / 30% 20%;
 }
 
@@ -39,16 +38,8 @@ h1{
 .hide {
   display: none;
 }
-#pokeInfo {
-  padding-bottom: 3%;
-  padding-top: 25%;
-  padding-left: 8%;
-  font-size: 12px;
-}
-
 .second-container  ul {
   list-style-type: none;
-  padding-left: 0px;
   padding-top: 116px;
   font-size: 12px;
   margin-bottom: 4%;
@@ -66,13 +57,13 @@ p{
 
 
 .row{
-  animation: animationFrames ease 1s;
+  animation: header ease 1s;
   @extend %equal-animation;
   animation-fill-mode:forwards;
 
 }
 
-@keyframes animationFrames{
+@keyframes header{
   0% {
     opacity:0;
     transform:  translate(-1500px,0px)  ;
@@ -98,23 +89,48 @@ padding-left: 10%;
 
     }
 
-      .second-container img {
-    animation: fade linear 0.7s;
+  .second-container img {
+    animation: shaky linear 1s;
     @extend %equal-animation;
 
+
   }
 
-  @keyframes fade{
+  @keyframes shaky{
     0% {
-      opacity:1;
-      transform:  rotate(0deg) ;
+      transform:  translate(0px,0px)  ;
+    }
+    10% {
+      transform:  translate(-10px,0px)  ;
+    }
+    20% {
+      transform:  translate(10px,0px)  ;
+    }
+    30% {
+      transform:  translate(-10px,0px)  ;
+    }
+    40% {
+      transform:  translate(10px,0px)  ;
+    }
+    50% {
+      transform:  translate(-10px,0px)  ;
+    }
+    60% {
+      transform:  translate(10px,0px)  ;
+    }
+    70% {
+      transform:  translate(-10px,0px)  ;
+    }
+    80% {
+      transform:  translate(10px,0px)  ;
+    }
+    90% {
+      transform:  translate(-10px,0px)  ;
     }
     100% {
-      opacity:0;
-      transform:  rotate(200deg) ;
+      transform:  translate(0px,0px)  ;
     }
   }
-
 
 p {
   animation: glow 3s ease-in-out infinite;

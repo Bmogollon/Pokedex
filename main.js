@@ -68,7 +68,6 @@ function getPokemon(pokemon) {
     let images = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/" + id +".png";
     for(typ in data["types"]){
       var types = (data["types"][typ]["type"]["name"]);
-      // console.log(types);
     }
     var abilities =  data["abilities"][0]["ability"]["name"];
     // console.log(abilities);
@@ -106,8 +105,8 @@ function pokeInf (pokemon) {
 var trainerName = new TrainerName("Bonny", pokemon1, pokemon2, pokemon3);
 
 let poke1 = document.querySelector("#phantump");
-let poke2 = document.querySelector("#diancie");
-let poke3 = document.querySelector("#flygon");
+let poke2 = document.querySelector("#flygon");
+let poke3 = document.querySelector("#diancie");
 
 
 let images = document.querySelector(".pokeImage");
@@ -138,17 +137,16 @@ function displayStats(pokemon) {
 }
 function displayText(pokemon){
   text.innerHTML = pokemon.text;
-  // console.log(text);
   hidden.classList.remove("hidden")
   // hide.classList.remove("hide")
 }
 
 poke1.addEventListener("mouseover", displayPhantump);
 poke1.addEventListener("mouseout", removePhantump);
-poke2.addEventListener("mouseover", displayDiancie);
-poke2.addEventListener("mouseout", removeDiancie);
 poke3.addEventListener("mouseover", displayFlygon);
 poke3.addEventListener("mouseout", removeFlygon);
+poke2.addEventListener("mouseover", displayDiancie);
+poke2.addEventListener("mouseout", removeDiancie);
 
 function displayPhantump() {
   getPokemon("phantump");
@@ -159,20 +157,20 @@ function removePhantump(){
   hidden.classList.add("hidden");
   hide.classList.add("hide")
 }
+function displayFlygon() {
+  getPokemon("flygon");
+  pokeInf("flygon");
+}
+function removeFlygon(){
+  hidden.classList.add("hidden");
+  hide.classList.add("hide")
+}
 
 function displayDiancie() {
   getPokemon("diancie");
   pokeInf("diancie");
 }
 function removeDiancie(){
-  hidden.classList.add("hidden");
-  hide.classList.add("hide")
-}
-function displayFlygon() {
-  getPokemon("flygon");
-  pokeInf("flygon");
-}
-function removeFlygon(){
   hidden.classList.add("hidden");
   hide.classList.add("hide")
 }
