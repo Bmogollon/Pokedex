@@ -1,6 +1,6 @@
-var pokemon1 = "phantump";
-var pokemon3 = "flygon";
-var pokemon2 = "diancie";
+var pokemon1 = 708;
+var pokemon3 = 330;
+var pokemon2 = 719;
 
 class Pokemons {
   constructor(name,hp, attack, defense,id, images,type, abilities) {
@@ -57,15 +57,16 @@ function getPokemon(pokemon) {
       let attack = data["stats"][4]["base_stat"];
       let defense = data["stats"][3]["base_stat"];
       let id = data["id"];
-      if(id< 10){
-        id=toString();
-        id="00" + id;
-      }
-      else if (id > 9 && id < 100) {
-        id=toString();
-        id="0"+id;
-      }
-    let images = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/" + id +".png";
+      // if(pokemon< 10){
+      //   pokemon=toString();
+      //   pokemon="00" + pokemon;
+      // }
+      // else if (pokemon > 9 && pokemon < 100) {
+      //   pokemon=toString();
+      //   pokemon="0"+pokemon;
+      // }
+    let images = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/" + pokemon +".png";
+    // id =parseInt();
     for(typ in data["types"]){
       var types = (data["types"][typ]["type"]["name"]);
     }
@@ -76,7 +77,7 @@ function getPokemon(pokemon) {
     displayStats(pokemons)
 }
 };
-  xhttp.open("GET", "https://fizal.me/pokeapi/api/v2/name/" +pokemon+ ".json", true);
+  xhttp.open("GET", "https://fizal.me/pokeapi/api/" +pokemon+ ".json", true);
   xhttp.send();
 }
 
@@ -149,8 +150,8 @@ poke2.addEventListener("mouseover", displayDiancie);
 poke2.addEventListener("mouseout", removeDiancie);
 
 function displayPhantump() {
-  getPokemon("phantump");
-  pokeInf("phantump");
+  getPokemon(708);
+  pokeInf(708);
 }
 
 function removePhantump(){
@@ -158,8 +159,8 @@ function removePhantump(){
   hide.classList.add("hide")
 }
 function displayFlygon() {
-  getPokemon("flygon");
-  pokeInf("flygon");
+  getPokemon(330);
+  pokeInf(330);
 }
 function removeFlygon(){
   hidden.classList.add("hidden");
@@ -167,10 +168,19 @@ function removeFlygon(){
 }
 
 function displayDiancie() {
-  getPokemon("diancie");
-  pokeInf("diancie");
+  getPokemon(719);
+  pokeInf(719);
 }
 function removeDiancie(){
   hidden.classList.add("hidden");
   hide.classList.add("hide")
+}
+
+
+////////
+function randomPoke(pokemon) {
+  pokemon = Math.floor(Math.random() * 802);
+  console.log(pokemon);
+  getPokemon(pokemon);
+  pokeInf(pokemon);
 }
