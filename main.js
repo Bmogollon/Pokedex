@@ -12,7 +12,7 @@ class Pokemons {
     this.images = images;
     this.type = type;
     this.abilities = abilities;
-    trainerName.pokemons.push(this);
+    trainer.pokemons.push(this);
 
   }
 }
@@ -22,7 +22,7 @@ class Info {
   }
 }
 
-class TrainerName {
+class Trainer {
   constructor(name) {
     this.name = name;
     this.pokemons = [];
@@ -44,8 +44,6 @@ class TrainerName {
 }
 
 function getPokemon(pokemon) {
-  // pokemon = document.getElementById("search").value;
-  // console.log(pokemon);
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if(this.readyState == 4 && this.status == 200) {
@@ -57,14 +55,6 @@ function getPokemon(pokemon) {
       let attack = data["stats"][4]["base_stat"];
       let defense = data["stats"][3]["base_stat"];
       let id = data["id"];
-      // if(pokemon< 10){
-      //   pokemon=toString();
-      //   pokemon="00" + pokemon;
-      // }
-      // else if (pokemon > 9 && pokemon < 100) {
-      //   pokemon=toString();
-      //   pokemon="0"+pokemon;
-      // }
     let images = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/" + pokemon +".png";
     // id =parseInt();
     for(typ in data["types"]){
@@ -103,7 +93,7 @@ function pokeInf (pokemon) {
   xhttp.send();
 }
 
-var trainerName = new TrainerName("Bonny", pokemon1, pokemon2, pokemon3);
+var trainer = new Trainer ("Bonny", pokemon1, pokemon2, pokemon3);
 
 let poke1 = document.querySelector("#phantump");
 let poke2 = document.querySelector("#flygon");
@@ -119,8 +109,8 @@ let defense = document.querySelector(".defense");
 let type = document.querySelector(".type");
 let abilities = document.querySelector(".abilities");
 let text = document.querySelector(".text");
-let hidden = document.querySelector(".hidden")
-let hide = document.querySelector(".hide")
+let invisible = document.querySelector(".invisible")
+let visible = document.querySelector(".visible")
 
 
 function displayStats(pokemon) {
@@ -132,14 +122,13 @@ function displayStats(pokemon) {
   defense.innerText = pokemon.defense;
   type.innerText = pokemon.type;
   abilities.innerText = pokemon.abilities;
-  hidden.classList.remove("hidden")
-  hide.classList.remove("hide")
+  invisible.classList.remove("invisible")
+  visible.classList.remove("visible")
 
 }
 function displayText(pokemon){
   text.innerHTML = pokemon.text;
-  hidden.classList.remove("hidden")
-  // hide.classList.remove("hide")
+  invisible.classList.remove("invisible")
 }
 
 poke1.addEventListener("mouseover", displayPhantump);
@@ -155,16 +144,16 @@ function displayPhantump() {
 }
 
 function removePhantump(){
-  hidden.classList.add("hidden");
-  hide.classList.add("hide")
+  invisible.classList.add("invisible");
+  visible.classList.add("visible")
 }
 function displayFlygon() {
   getPokemon(330);
   pokeInf(330);
 }
 function removeFlygon(){
-  hidden.classList.add("hidden");
-  hide.classList.add("hide")
+  invisible.classList.add("invisible");
+  visible.classList.add("visible")
 }
 
 function displayDiancie() {
@@ -172,12 +161,12 @@ function displayDiancie() {
   pokeInf(719);
 }
 function removeDiancie(){
-  hidden.classList.add("hidden");
-  hide.classList.add("hide")
+  invisible.classList.add("invisible");
+  visible.classList.add("visible")
 }
 
-
-////////
+// ****************************************************************
+// RANDOM POKEMONS
 function randomPoke(pokemon) {
   pokemon = Math.floor(Math.random() * 802);
   console.log(pokemon);

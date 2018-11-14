@@ -5,75 +5,29 @@ $font-header:'Courier', monospace;
   transform-origin: 50% 50%;
 }
 
+@charset "UTF-8";
+.row, .second-container img {
+  animation-iteration-count: 1;
+  transform-origin: 50% 50%; }
 
-body{
+body {
   background-image: url("images/background1.jpg");
   background-size: contain;
-  font-family: $font-body;
-  background-repeat: no-repeat;
-}
-h1{
+  font-family: ΓÇÿVT323ΓÇÖ, monospace;
+  background-repeat: no-repeat; }
+
+h1 {
   text-align: center;
-  font-family:$font-header;
--webkit-font-smoothing : none;
-}
-.col-sm img {
-  height: 140px;
-  width: 140px;
-}
-
-
-.second-container{
-  display: grid;
-  background-image: url("images/Pokedex.png");
-  background-size: 55%  86%;
-  background-repeat: no-repeat;
-  grid-gap: 2%;
-  grid-template: 500px / 30% 20%;
-}
-
-.hidden {
-  display: none;
-}
-.hide {
-  display: none;
-}
-.second-container  ul {
-  list-style-type: none;
-  padding-top: 116px;
-  font-size: 12px;
-  margin-bottom: 4%;
-
-}
-
-p{
-  margin-top: 0;
-  font-size: 12px;
-  padding-left: 7%;
-}
-
-/* ************************************************************************************************ */
-                                  /* ANIMATIONS */
-
-
-.row{
-  animation: header ease 1s;
-  @extend %equal-animation;
+  font-family: "Courier", monospace;
+  animation: header1 ease 1s;
+  animation-iteration-count: 1;
+  transform-origin: 50% 50%;
   animation-fill-mode:forwards;
-
-}
-
-@keyframes header{
+  }
+@keyframes header1{
   0% {
     opacity:0;
-    transform:  translate(-1500px,0px)  ;
-  }
-  60% {
-    opacity:1;
-    transform:  translate(30px,0px)  ;
-  }
-  80% {
-    transform:  translate(-10px,0px)  ;
+    transform:  translate(0px,-25px)  ;
   }
   100% {
     opacity:1;
@@ -81,66 +35,131 @@ p{
   }
 }
 
-.second-container img  {
-padding-top: 36%;
-padding-bottom: 32%;
-height: 453px;
-padding-left: 10%;
 
-    }
+.col-sm img {
+  height: 150px;
+  width: 150px; }
 
-  .second-container img {
-    animation: shaky linear 1s;
-    @extend %equal-animation;
+.second-container {
+  display: grid;
+  background-image: url("images/Pokedex.png");
+  background-size: 55%  86%;
+  background-repeat: no-repeat;
+  grid-gap: 2%;
+  grid-template: 500px / 30% 20%; }
 
+.invisible {
+  display: none; }
 
+.visible {
+  display: none; }
+
+.second-container ul {
+  list-style-type: none;
+  padding-top: 116px;
+  font-size: 12px;
+  margin-bottom: 4%;
+  padding-left: 1%;
+}
+.clickme{
+  font-family:"Comic Sans MS", cursive, sans-serif;
+  animation: home linear 1s;
+  animation-iteration-count: 1;
+  transform-origin: 50% 50%;
+  animation: home 3s infinite;
   }
 
-  @keyframes shaky{
-    0% {
-      transform:  translate(0px,0px)  ;
-    }
-    10% {
-      transform:  translate(-10px,0px)  ;
-    }
-    20% {
-      transform:  translate(10px,0px)  ;
-    }
-    30% {
-      transform:  translate(-10px,0px)  ;
-    }
-    40% {
-      transform:  translate(10px,0px)  ;
-    }
-    50% {
-      transform:  translate(-10px,0px)  ;
-    }
-    60% {
-      transform:  translate(10px,0px)  ;
-    }
-    70% {
-      transform:  translate(-10px,0px)  ;
-    }
-    80% {
-      transform:  translate(10px,0px)  ;
-    }
-    90% {
-      transform:  translate(-10px,0px)  ;
-    }
-    100% {
-      transform:  translate(0px,0px)  ;
-    }
+  @keyframes home{
+  0% {
+    opacity:1;
+    transform:  scaleX(1.00) scaleY(1.00) ;
   }
+  25% {
+    opacity:1;
+    transform:  scaleX(0.95) scaleY(0.95) ;
+  }
+  50% {
+    opacity:1;
+    transform:  scaleX(1.10) scaleY(1.10) ;
+  }
+  100% {
+    opacity:0;
+    transform:  scaleX(0.30) scaleY(0.30) ;
+  }
+  }
+
+
+/* *********************************************** */
+#search {
+  height: 100px;
+  width: 100px; }
 
 p {
-  animation: glow 3s ease-in-out infinite;
-}
+  margin-top: 0;
+  font-size: 12px;
+  padding-left: 7%; }
 
-@keyframes glow
-{
-	0%   { box-shadow: 0 0 0px yellow; }
-  25%  { box-shadow: 0 0 5px red;   }
-	50%  { box-shadow: 0 0 5px purple; }
-  75%  { box-shadow: 0 0 5px blue;}
-	100% { box-shadow: 0 0 0px green; }
-}
+/* ************************************************************************************************ */
+/* ANIMATIONS */
+.row {
+  animation: header ease 1s;
+  animation-fill-mode: forwards; }
+
+@keyframes header {
+  0% {
+    opacity: 0;
+    transform: translate(-1500px, 0px); }
+  60% {
+    opacity: 1;
+    transform: translate(30px, 0px); }
+  80% {
+    transform: translate(-10px, 0px); }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px); } }
+.second-container img {
+  padding-top: 36%;
+  padding-bottom: 32%;
+  height: 453px;
+  padding-left: 10%; }
+
+.second-container img {
+  animation: shaky linear 1s; }
+
+@keyframes shaky {
+  0% {
+    transform: translate(0px, 0px); }
+  10% {
+    transform: translate(-10px, 0px); }
+  20% {
+    transform: translate(10px, 0px); }
+  30% {
+    transform: translate(-10px, 0px); }
+  40% {
+    transform: translate(10px, 0px); }
+  50% {
+    transform: translate(-10px, 0px); }
+  60% {
+    transform: translate(10px, 0px); }
+  70% {
+    transform: translate(-10px, 0px); }
+  80% {
+    transform: translate(10px, 0px); }
+  90% {
+    transform: translate(-10px, 0px); }
+  100% {
+    transform: translate(0px, 0px); } }
+p {
+  animation: glow 3s ease-in-out infinite; }
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 0px yellow; }
+  25% {
+    box-shadow: 0 0 5px red; }
+  50% {
+    box-shadow: 0 0 5px purple; }
+  75% {
+    box-shadow: 0 0 5px blue; }
+  100% {
+    box-shadow: 0 0 0px green; } }
