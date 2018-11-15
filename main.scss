@@ -1,5 +1,6 @@
 $font-body:‘VT323’, monospace;
 $font-header:'Courier', monospace;
+$repeater:no-repeat;
 $transform1:translate(-10px, 0px);
 $transform2:translate(10px, 0px);
 %equal-animation{
@@ -11,7 +12,8 @@ body {
   background-image: url("images/background1.jpg");
   background-size: contain;
   font-family: $font-body;
-  background-repeat: no-repeat; }
+  background-repeat: $repeater;
+ }
 
 h1 {
   text-align: center;
@@ -40,7 +42,7 @@ h1 {
   display: grid;
   background-image: url("images/Pokedex.png");
   background-size: 55%  86%;
-  background-repeat: no-repeat;
+  background-repeat: $repeater;
   grid-gap: 2%;
   grid-template: 500px / 30% 20%; }
 
